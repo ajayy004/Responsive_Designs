@@ -3,29 +3,29 @@
     <head>
     	<title>Responsive Navigation</title>
         <meta name="author" content="Ajay Kumar Yadav">
-		<meta name="description" content="Responsive navigation">
-		<meta name="keywords" content="HTML,CSS,JavaScript">
-		<meta charset="utf-8">
+	<meta name="description" content="Responsive navigation">
+	<meta name="keywords" content="HTML,CSS,JavaScript">
+	<meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale+1.0">
-		<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
         <script> 
-			$(function() {
-						var pull 		= $('#menu');
-							menu 		= $('#panel');
-							menuHeight	= menu.height();
+		$(function() {
+				var pull 		= $('#menu');
+				menu 		= $('#panel');
+				menuHeight	= menu.height();
+		
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
 			
-						$(pull).on('click', function(e) {
-							e.preventDefault();
-							menu.slideToggle();
-						});
-			
-						$(window).resize(function(){
-							var w = $(window).width();
-							if(w > 480 && menu.is(':hidden')) {
-								menu.removeAttr('style');
-							}
-						});
-					});				
+				$(window).resize(function(){
+					var w = $(window).width();
+					if(w > 480 && menu.is(':hidden')) {
+					menu.removeAttr('style');
+				}
+			});
+		});				
         </script>
          
         <style type="text/css"> 
